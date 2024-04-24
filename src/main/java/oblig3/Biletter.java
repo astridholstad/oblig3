@@ -3,6 +3,7 @@ package oblig3;
 
 public class Biletter {
 
+    private int id;
     private String film;
     private int antall;
     private String forNavn;
@@ -19,6 +20,14 @@ public class Biletter {
         this.email = email;
     }
     public Biletter(){
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFilm() {

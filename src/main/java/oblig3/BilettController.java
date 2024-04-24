@@ -3,31 +3,32 @@ package oblig3;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
-import java.util.ArrayList;
-//import java.util.List;
+import java.util.List;
+import java.util.Collections;
 
 
 @RestController
 public class BilettController{
-    public final ArrayList<Biletter> alleBiletter = new ArrayList<>();
 
-    //* @Autowired
-    // BiletterRepo rep;
+     @Autowired
+     BiletterRepo rep;
 
     @PostMapping("/lagre")
-    public void lagreBilett(Biletter innBilett){
-        alleBiletter.add(innBilett);
+    public void lagreBilett(Biletter innBilett)
+    {
+        rep.lagreBilett(innBilett);
     }
 
     @GetMapping("/hentAlle")
-    public ArrayList<Biletter> hentAlle() {
-        return alleBiletter;
+    public List<Biletter> hentAlle() {
+        return rep.hentAlleBiletter();
     }
     @GetMapping("/slettAlle")
-    public void slettAlle(){
-        alleBiletter.clear();
+    public void slettAlle()
+    {
+        rep.slettAlleBiletter();
     }
 }
