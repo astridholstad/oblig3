@@ -12,11 +12,11 @@ public class BiletterRepo {
     private JdbcTemplate db; // en klasse
 
     public void lagreBilett(Biletter innBilett){
-        String sql = "INSERT * INT0 Biletter(film, antall, forNavn, etterNavn, telefonNr, email) VALUES(?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT into Biletter(film,antall,forNavn,etterNavn,telefonNr,email) VALUES(?,?,?,?,?,?);";
         db.update(sql, innBilett.getFilm(), innBilett.getAntall(), innBilett.getForNavn(), innBilett.getEtterNavn(), innBilett.getTelefonNr(), innBilett.getEmail());
     }
     public List<Biletter> hentAlleBiletter(){
-        String sql = "SELECT * FROM Biletter ORDER BY etternavn";
+        String sql = "SELECT * FROM Biletter ORDER BY etternavn;";
         List<Biletter> alleBiletter = db.query(sql, new BeanPropertyRowMapper(Biletter.class));
         return alleBiletter;
     }

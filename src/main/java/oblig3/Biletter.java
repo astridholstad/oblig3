@@ -10,7 +10,8 @@ public class Biletter {
     private String telefonNr;
     private String email;
 
-    public Biletter(String film, int antall, String forNavn, String etterNavn, String telefonNr, String email){
+    public Biletter(int id, String film, int antall, String forNavn, String etterNavn, String telefonNr, String email){
+        this.id = id;
         this.film = film;
         this.antall = antall;
         this.forNavn = forNavn;

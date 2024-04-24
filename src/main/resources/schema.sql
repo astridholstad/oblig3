@@ -1,11 +1,12 @@
 CREATE TABLE Biletter
 (
-    id SMALLINT AUTO_INCREMENT,
+    id SMALLINT AUTO_INCREMENT NOT NULL,
     film VARCHAR(255) NOT NULL,
     antall INTEGER NOT NULL,
     forNavn VARCHAR(255) NOT NULL,
     etterNavn VARCHAR(255) NOT NULL,
-    telefonNr CHAR(20) NOT NULL,
+    telefonNr CHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
+
