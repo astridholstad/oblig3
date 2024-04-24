@@ -16,7 +16,6 @@ function regBilett() {
     };
 
     let feil = "*Må skrive noe inn i "
-    let teller = 0;
     let valid = true;
 
     if (isNaN(antall) || antall === "") {
