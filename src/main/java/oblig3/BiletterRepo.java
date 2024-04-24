@@ -5,7 +5,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 
-
 @Repository
 public class BiletterRepo {
 
@@ -13,11 +12,11 @@ public class BiletterRepo {
     private JdbcTemplate db; // en klasse
 
     public void lagreBilett(Biletter innBilett){
-        String sql = "INSERT INT0 Biletter (film, antall, forNavn, etterNavn, telefonNr, email) VALUES(?,?,?,?,?,?)";
-        db.update(sql, innBilett, innBilett.getFilm(), innBilett.getAntall(), innBilett.getForNavn(), innBilett.getEtterNavn(), innBilett.getTelefonNr(), innBilett.getEmail());
+        String sql = "INSERT * INT0 Biletter(film, antall, forNavn, etterNavn, telefonNr, email) VALUES(?, ?, ?, ?, ?, ?)";
+        db.update(sql, innBilett.getFilm(), innBilett.getAntall(), innBilett.getForNavn(), innBilett.getEtterNavn(), innBilett.getTelefonNr(), innBilett.getEmail());
     }
     public List<Biletter> hentAlleBiletter(){
-        String sql = "SELECT * FROM Biletter";
+        String sql = "SELECT * FROM Biletter ORDER BY etternavn";
         List<Biletter> alleBiletter = db.query(sql, new BeanPropertyRowMapper(Biletter.class));
         return alleBiletter;
     }

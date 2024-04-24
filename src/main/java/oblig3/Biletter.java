@@ -1,6 +1,5 @@
 package oblig3;
 
-
 public class Biletter {
 
     private int id;
