@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 
 @RestController
-public class Bilett{
+public class BilettController{
     public final ArrayList<Biletter> alleBiletter = new ArrayList<>();
 
     //* @Autowired
