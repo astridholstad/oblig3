@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kinobiletter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Bestilling av Kinobilletter</h1>
+            <form class="form" id="bilettType">
+                <div class="form-group">
+                    <label for="film">Velg film:</label>
+                    <select id="film" class="form-control">
+                        <option value="Oppenheimer">Oppenheimer</option>
+                        <option value="Interstellar">Interstellar</option>
+                        <option value="Barbie">Barbie</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="antall">Antall:</label>
+                    <input type="number" class="form-control" id="antall">
+                    <span id="antallValidationMsg"></span>
+                </div>
+                <div class="form-group">
+                    <label for="forNavn">Fornavn:</label>
+                    <input type="text" class="form-control" id="forNavn">
+                    <span id="firstNameValidationMsg"></span>
+                </div>
+                <div class="form-group">
+                    <label for="etterNavn">Etternavn:</label>
+                    <input type="text" class="form-control" id="etterNavn">
+                    <span id="lastNameValidationMsg"></span>
+                </div>
+                <div class="form-group">
+                    <label for="telefonNr">Telefonnr:</label>
+                    <input type="text" class="form-control" id="telefonNr">
+                    <span id="telefonNrValidationMsg"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email">
+                    <span id="emailValidationMsg"></span>
+                </div>
+            </form>
+            <button class="btn btn-primary" onclick="regBilett()">Kjøp biletter</button>
+        </div>
+        <div class="col-md-8">
+            <h2>Alle billetter</h2>
+            <span id="alleBiletter"></span>
+            <button class="btn btn-danger" onclick="slettAlle()">Slett alle billetter</button>
+        </div>
+    </div>
+</div>
+<script src="app2.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</body>
+</html>
